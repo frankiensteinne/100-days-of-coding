@@ -90,6 +90,14 @@ Expected Output: "Pit stop!" or "Stay out."
 
 print_border(level,item, "Start")
 #Enter your code below this line
+tire_number = int(input("What is the current lap number?: "))
+tire_condition = input("What is the tire condition: good or worn?: ").lower()
+
+if tire_number > 10 and tire_condition == 'worn':
+    print("Pit Stop!")
+else:
+    print("Stay out.")
+    
 
 print_border(level,item, "End")
 
@@ -104,6 +112,20 @@ Expected Output:  A message indicating the team's league position.
 
 print_border(level,item, "Start")
 #Enter your code below this line
+team_points = int(input("How many points did the team scored?: "))
+
+if team_points >= 70:
+    print("The team is in first place!")
+    
+elif team_points < 70 and 59 < team_points:
+    print("The team is in second place!")
+    
+elif team_points < 60 and 49 < team_points:
+    print("The team is in third place!")
+    
+else:
+    print("The team is not in the top 3.")
+
 
 print_border(level,item, "End")
 
@@ -117,5 +139,17 @@ Expected Output: A message declaring the champion or indicating a tie.
 
 print_border(level,item, "Start")
 #Enter your code below this line
+
+driver_one_pts = int(input("How many points did driver one earned? "))
+driver_two_pts = int(input("How many points did driver two earned? "))
+
+if driver_one_pts < driver_two_pts:
+    print("Driver two wins!")
+elif driver_two_pts < driver_one_pts:
+    print("Driver one wins!")
+else:
+    print("It's a tie!")
+
+
 
 print_border(level,item, "End")
