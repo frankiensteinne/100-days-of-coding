@@ -2,6 +2,11 @@ border = "*" * 10
 
 def print_border(level,item,status):
     print(border,level,item,status, border)
+    
+from random import randint
+
+random_number = randint(1,3)
+print(random_number)
 
 level = "Base"
 item = "Penalty Kick"
@@ -13,6 +18,22 @@ Task:  Write a program that simulates a penalty kick. Ask the user to input "lef
 
 Expected Output: "Goal!" or "Saved!"
 '''
+random_number = randint(1,3)
+goalie = ""
+
+if random_number == 1:
+    goalie = "left"
+elif random_number == 2:
+    goalie ="right"
+else:
+    goalie = "center"
+    
+guess = input("Where will you kick: left, right, or center?: ").lower()
+
+if guess == goalie:
+    print("Saved")
+else:
+    print("Goal!")
 
 print_border(level,item, "End")
 
@@ -25,6 +46,12 @@ Expected Output: "Go!" or "Wait!"
 
 print_border(level,item, "Start")
 #Enter your code below this line
+light = input("What color are the lights?: red, yellow, or green? ").lower()
+
+if light == 'green':
+    print('Go!')
+else:
+    print('Wait!')
 
 print_border(level,item, "End")
 
@@ -38,7 +65,20 @@ Expected Output:  "[Player name] gets a [card type] card!"
 
 print_border(level,item, "Start")
 #Enter your code below this line
+yellow_cards = 0
+player_name = input("What is the player's name?: ").title()
+offense = input("What type of foul did they committed, major or minor?").lower()
 
+
+if offense == 'minor':
+    yellow_cards += 1
+    if yellow_cards == 2:
+        print(f"{player_name} gets a second yellow card and a red card!")
+    else:
+        print(f"{player_name} gets a yellow card.")
+else:
+    print(f"{player_name} gets a red card!")
+        
 print_border(level,item, "End")
 
 item = "Pit Stop Strategy"
