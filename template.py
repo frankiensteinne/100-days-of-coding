@@ -18,6 +18,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -30,6 +31,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -42,6 +44,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 level = "Comfortable"
 
@@ -56,6 +59,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -68,6 +72,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -80,6 +85,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 level = "More Comfortable"
 
@@ -94,6 +100,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -106,6 +113,7 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
 
 item = ""
 '''
@@ -118,3 +126,4 @@ linebreak()
 
 linebreak()
 print_border(level,item, "End")
+linebreak()
