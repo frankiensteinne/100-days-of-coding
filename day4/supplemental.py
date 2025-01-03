@@ -127,6 +127,16 @@ Expected Output: "Correct!", "Too high!", or "Too low!"
 
 print_border(level,item, "Start")
 #Enter your code below this line
+winning_number =  randint(1,20)
+# print(winning_number)
+user_guess = int(input("Guess a number between 1 and 20: "))
+
+if winning_number < user_guess:
+    print("Too high!")
+elif winning_number == user_guess:
+    print("Congrats!")
+else:
+    print("Too low!")
 
 print_border(level,item, "End")
 
@@ -139,5 +149,18 @@ Expected Output: A list of 4 team names.
 
 print_border(level,item, "Start")
 #Enter your code below this line
+football_teams = [
+    "FC Barcelona",
+    "Atletico Bilbao",
+    "Cadiz FC",
+    "Las Palmas",
+    "Deportivo Coruna",
+    "Girona",
+    "Espanyol",
+    "Real Sociedad"
+]
 
+shuffle(football_teams)
+selected_teams = football_teams[1:5]
+print(selected_teams)
 print_border(level,item, "End")
