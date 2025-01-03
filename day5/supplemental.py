@@ -25,6 +25,11 @@ Liftoff!
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+for number in reversed(range(0,11)):
+    if number != 0:
+        print(number)
+    else:
+        print("Liftoff!")
 
 linebreak()
 print_border(level,item, "End")
@@ -44,6 +49,10 @@ Expected Output:
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+team_name = input("Input team name for chant: ").title()
+
+for _ in range(3):
+    print(f"{team_name}!") 
 
 linebreak()
 print_border(level,item, "End")
@@ -62,6 +71,14 @@ print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 
+laps = 0
+while laps < 20:
+    laps += 1
+    if laps%5 == 0:
+        print(f"Lap {laps} - Pit Stop!")
+    else:
+        print(f"Lap {laps}")
+
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -79,6 +96,19 @@ Expected Output:
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+footballers = [
+    "Marc Casado",
+    "Pedri",
+    "Raphina",
+    "Gavi",
+    "Fermin Lopez",
+    "Robert Lewandowski"
+    ]
+for player in footballers:
+    if player != 'Pedri':
+        print(f"{player} scored a goal!")
+    else:
+        print(f"{player} scored a goal! He's a rising star!")
 
 linebreak()
 print_border(level,item, "End")
@@ -96,6 +126,14 @@ Expected Output: The program repeatedly asks the user to "chant" or "quit" and r
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+while True:
+    mode = input("Chant or Quit? ").title()
+    if mode == 'Quit':
+        break
+    elif mode == 'Chant':
+        print("Vamos Barca, vamos!")
+    else:
+        print("Please enter a valid response (Chant/ Quit). ")
 
 linebreak()
 print_border(level,item, "End")
@@ -103,15 +141,48 @@ linebreak()
 
 item = "Driver Position Tracker"
 '''
-Task: Create a list of 5 F1 drivers. Use a while loop and input() to ask the user to enter the current lap number and the position changes for each driver. Update the driver positions accordingly and print the current standings after each lap. (pp. 42-44)
+Task: Create a list of 5 F1 drivers. Use a while loop and input() to ask the user to enter the current lap number and the position changes for each driver. Update the driver positions accordingly and print the current standings after each lap.
 
 Expected Output: The program asks for lap number and position changes, then prints the updated driver standings after each lap.
 '''
-
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+from random import shuffle
 
+five_drivers = [
+    "Charles Leclerc",
+    "Lewis Hamilton",
+    "Alex Albon",
+    "Carlos Sainz",
+    "Oliver Bearman"
+]
+
+while True:
+    try:
+        lap_number = int(input("Input current lap number (1-30): "))
+        
+        if lap_number < 1 or lap_number > 30:
+            print("Please input a value between 1 and 30.")
+            continue
+
+        shuffle(five_drivers)
+
+        if lap_number < 30:
+            print(f"Lap {lap_number}:")
+            for idx, driver in enumerate(five_drivers, start=1):
+                print(f"{idx}. {driver}")
+        else:  # Lap 30
+            print(f"Lap {lap_number} - Final Standings:")
+            for idx, driver in enumerate(five_drivers, start=1):
+                print(f"{idx}. {driver}")
+            print("Race complete!")
+            break
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+    
 linebreak()
 print_border(level,item, "End")
 linebreak()
