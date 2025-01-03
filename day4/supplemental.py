@@ -1,7 +1,10 @@
 border = "*" * 10
 
 def print_border(level,item,status):
-    print(border,level,item,status, border)
+    print(border,level,item,status)
+
+    
+from random import choice, randint, shuffle
 
 level = "Base"
 item = "Coin Toss"
@@ -10,9 +13,10 @@ Task: Write a program that simulates a coin toss. Use the random.choice() functi
 
 Expected Output: "Heads" or "Tails"
 '''
-print_border(level,item, "Start")
+print_border(level,item, "Start\n")
 #Enter your code below this line
-
+coin_toss = choice([True, False])
+print(coin_toss)
 print_border(level,item, "End")
 
 item = "Penalty Shootout"
@@ -24,6 +28,16 @@ Expected Output: "[Player's name] steps up to take the penalty!" (e.g., "Pedri s
 
 print_border(level,item, "Start")
 #Enter your code below this line
+penalty_takers = [
+    "Raphina",
+    "Fermin Lopez",
+    "Robert Lewandowski"
+]
+
+penalty_taker = penalty_takers[randint(0,2)]
+
+print(f"{penalty_taker} steps up to take the penalty")
+
 
 print_border(level,item, "End")
 
@@ -40,6 +54,26 @@ Expected Output: A list of 5 player names.
 print_border(level,item, "Start")
 #Enter your code below this line
 
+starting_lineup = []
+eleven = [
+    "Inaki Pena",
+    "Kounde",
+    "Pau Cubarsi",
+    "Inigo Martinez",
+    "Balde",
+    "Marc Casado",
+    "Pedri",
+    "Raphina",
+    "Gavi",
+    "Fermin Lopez",
+    "Robert Lewandowski"
+]
+
+shuffle(eleven)
+starting_lineup = eleven[0:5]
+
+print(starting_lineup)
+
 print_border(level,item, "End")
 
 item = "Race Finishers"
@@ -51,6 +85,34 @@ Expected Output: "The top 3 finishers are: [driver 1], [driver 2], and [driver 3
 
 print_border(level,item, "Start")
 #Enter your code below this line
+top_3 = []
+f1_drivers = [
+    "Max Verstappen",
+    "Liam Lawson",
+    "Charles Leclerc",
+    "Lewis Hamilton",
+    "Lando Norris",
+    "Oscar Piastri",
+    "George Russell",
+    "Kimi Antonelli",
+    "Fernando Alonso",
+    "Lance Stroll",
+    "Yuki Tsunoda",
+    "Isack Hadjar",
+    "Oliver Bearman",
+    "Esteban Ocon",
+    "Pierre Gasly",
+    "Jack Doohan",
+    "Alex Albon",
+    "Carlos Sainz",
+    "Nico Hulkenberg",
+    "Gabriel Bortoleto"
+]
+
+shuffle(f1_drivers)
+top_3 = f1_drivers[0:3]
+
+print(f"The top 3 finishers are: {top_3[0]}, {top_3[1]}, and {top_3[2]}")
 
 print_border(level,item, "End")
 
