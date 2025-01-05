@@ -1,9 +1,8 @@
-# Day 8 of 100 : Building a Football Match Simulator
-
-Creating a program that simulates key events in a football match, like goals, cards, and substitutions.
+# Day 7 of 100 : Culmination of Learning
 
 - String manipulation
 - Lists and indexing
+- input
 - `for` and `while` loops
 - Conditional statements (`if`-`elif`-`else`)
 - Functions
