@@ -41,7 +41,8 @@ linebreak()
 
 item = "Team Comparison"
 '''
-
+Concepts: Comparison Operators
+Task: Compare two teams' points and print which one is leading. 
 '''
 
 print_border(level,item, "Start")
@@ -54,22 +55,10 @@ linebreak()
 
 level = "Comfortable"
 
-item = ""
+item = "Race Winner Predictor"
 '''
-
-'''
-
-print_border(level,item, "Start")
-linebreak()
-#Enter your code below this line
-
-linebreak()
-print_border(level,item, "End")
-linebreak()
-
-item = ""
-'''
-
+Concepts: Logical Operators (and, or)
+Task: Write a program that predicts the race winner based on conditions like driver performance and car reliability.
 '''
 
 print_border(level,item, "Start")
@@ -80,9 +69,23 @@ linebreak()
 print_border(level,item, "End")
 linebreak()
 
-item = ""
+item = "Barça Goal Tracker"
+'''
+Concepts: Nested if Statements
+Task: Check if Barça scores 3 or more goals in a match. If yes, check if Lewandowski scored at least 2.
 '''
 
+print_border(level,item, "Start")
+linebreak()
+#Enter your code below this line
+
+linebreak()
+print_border(level,item, "End")
+linebreak()
+
+item = "Pit Stop Validator"
+'''
+Task: Validate pit stop times. If below 2.5 seconds, print “Perfect Stop”; if between 2.5–3.5 seconds, print “Good Stop”; otherwise, print “Needs Improvement.”
 '''
 
 print_border(level,item, "Start")
@@ -95,22 +98,11 @@ linebreak()
 
 level = "More Comfortable"
 
-item = ""
+item = "Team Loyalty Checker"
 '''
-
-'''
-
-print_border(level,item, "Start")
-linebreak()
-#Enter your code below this line
-
-linebreak()
-print_border(level,item, "End")
-linebreak()
-
-item = ""
-'''
-
+Concepts: Logical and Comparison Operators
+Task: Ask the user which team they support and whether they watch matches regularly. Print a message based on their loyalty.
+Extra Challenge: Add a loyalty score system where regular viewers get a higher score.
 '''
 
 print_border(level,item, "Start")
@@ -121,9 +113,26 @@ linebreak()
 print_border(level,item, "End")
 linebreak()
 
-item = ""
+item = "Dynamic Championship Standings"
+'''
+Concepts: Nested Conditionals
+Task: Write a program that checks a driver’s points and determines their championship standing (e.g., Leader, Contender, Midfield).
+Extra Challenge: Incorporate penalties or bonus points dynamically (e.g., add/subtract points based on conditions like infractions or wins).
 '''
 
+print_border(level,item, "Start")
+linebreak()
+#Enter your code below this line
+
+linebreak()
+print_border(level,item, "End")
+linebreak()
+
+item = "FC Barcelona Score Validator"
+'''
+Concepts: Logical Operators, Nested Conditionals
+Task: Ask for the match score and validate if it’s a win, draw, or loss. Also, check if Barça scored 3 or more goals.
+Extra Challenge: Add support for a league points system
 '''
 
 print_border(level,item, "Start")
