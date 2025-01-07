@@ -186,7 +186,20 @@ Extra Challenge: Count how many laps meet the condition.
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+lap_no = 0
+ten_lap_times = []
+laps_under_eighty = []
 
+while len(ten_lap_times) < 10:
+    lap_no += 1
+    ten_lap_time = float(input(f"Input lap {lap_no} time in secs: " ))
+    ten_lap_times.append(ten_lap_time)
+    if ten_lap_time < 80:
+        laps_under_eighty.append(ten_lap_time)
+        print(f"Lap {lap_no}: Fast lap at {ten_lap_time} seconds")
+
+print(f"Total Fast Laps: {len(laps_under_eighty)}")
+    
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -201,7 +214,22 @@ Extra Challenge: Print whether Barça won, lost, or drew each match.
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+from random import randint
+match_number = 0
+message = ""
 
+while match_number < 3:
+    match_number += 1
+    barca_goals = randint(0,5)
+    opp_goals = randint(0,5)
+    if barca_goals > opp_goals:
+        message ="WIN"
+    elif opp_goals > barca_goals:
+        message = "LOSS"
+    else:
+        message = "DRAW"
+    
+    print(f"Match {match_number}: Barça {barca_goals} - {opp_goals} Opponent  | {message}")
 linebreak()
 print_border(level,item, "End")
 linebreak()
