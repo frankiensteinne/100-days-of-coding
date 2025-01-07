@@ -210,6 +210,26 @@ Extra Challenge: Incorporate penalties or bonus points dynamically (e.g., add/su
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+driver_name = input("Enter the driver's name: ").title()
+base_points = int(input("Enter the driver's current championship points: "))
+adjustment_type = input("Is there an adjustment? (win/infraction/none): ").lower()
+
+if adjustment_type == "win":
+    base_points += 25
+elif adjustment_type == "infraction":
+    base_points -= 10
+
+if base_points >= 500:
+    standing = "Leader"
+elif 300 <= base_points < 500:
+    standing = "Championship Contender"
+elif 100 <= base_points < 300:
+    standing = "Midfield"
+else:
+    standing = "Backmarker"
+
+# Display results
+print(f"{driver_name} now has {base_points} points and is classified as a {standing}.")
 
 
 linebreak()
