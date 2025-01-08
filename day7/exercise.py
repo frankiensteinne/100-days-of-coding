@@ -18,6 +18,11 @@ linebreak()
 #Enter your code below this line
 lap_times = [80.2, 78.5, 76.8]
 
+def display_lap_times(lap_times =  lap_times):
+    for lap in lap_times:
+        print(lap)
+
+display_lap_times()
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -34,6 +39,11 @@ linebreak()
 scorers = ['Lewandowski', 'Pedri']
 new_scorer = 'Ferran Torres'
 
+def add_goal_scorer(scorer, list_of_scorers = scorers):
+    list_of_scorers.append(scorer)
+    print(list_of_scorers)
+    
+add_goal_scorer(new_scorer)
 
 linebreak()
 print_border(level,item, "End")
@@ -50,6 +60,13 @@ linebreak()
 #Enter your code below this line
 lap_times = [80.2, 78.5, 76.8]
 
+def calculate_total_time(lap_times):
+    total_time = 0
+    for lap in lap_times:
+        total_time += lap
+    return total_time
+
+calculate_total_time(lap_times)
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -67,6 +84,12 @@ linebreak()
 #Enter your code below this line
 lap_times = [80.2, 78.5, 76.8]
 
+def calculate_average_lap_time(lap_times):
+    total_time = sum(lap_times)
+    return total_time/len(lap_times)
+
+calculate_average_lap_time(lap_times)
+
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -81,7 +104,13 @@ print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 scorers = ['Lewandowski', 'Pedri']  
-new_scorers = ['Ferran Torres', 'Ansu Fati']  
+new_scorers = ['Ferran Torres', 'Ansu Fati']
+
+def update_scorers(scorers, new_scorers):
+    scorers.extend(new_scorers)
+    return scorers
+
+update_scorers(scorers,new_scorers)
 
 linebreak()
 print_border(level,item, "End")
@@ -96,13 +125,20 @@ positions = [1, 2, 4, 6]
 messages = [
     "Winner!",
     "Podium Finish!",
-    "Keep Pushing!"
+    "Keep Pushing!",
     "Keep Pushing!"
 ]
 
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+def track_positions(positions,messages):
+    index = 0
+    for position in positions:
+        print(f"Position {position}: {messages[index]}")
+        index += 1
+        
+track_positions(positions, messages)
 
 linebreak()
 print_border(level,item, "End")
