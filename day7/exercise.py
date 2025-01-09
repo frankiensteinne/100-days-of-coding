@@ -160,6 +160,19 @@ linebreak()
 #Enter your code below this line
 lap_times = [80.2, 78.5, 76.8, 90.3]
 
+def analyze_lap_times(lap_times = lap_times):
+    slowest_lap = max(lap_times)
+    fastest_lap = min(lap_times)
+    average_lap = sum(lap_times)/len(lap_times)
+    count = 0
+    for lap in lap_times:
+        if lap < 80:
+            count += 1
+            
+    return slowest_lap, fastest_lap, average_lap, count
+
+analyze_lap_times()
+
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -178,6 +191,27 @@ linebreak()
 #Enter your code below this line
 scorers = ['Lewandowski', 'Pedri', 'Lewandowski', 'Ansu Fati', 'Lewandowski']
 
+def scorer_analysis(goals_list):
+    goal_scorers_dict = {}
+    for player in goals_list:
+        if player in goal_scorers_dict:
+            goal_scorers_dict[player] += 1
+        else:
+            goal_scorers_dict[player] = 1
+    
+    return goal_scorers_dict
+
+def print_top_scorer(goal_scorers_dict):
+    top_scorer = max(goal_scorers_dict, key=goal_scorers_dict.get)
+    goals = goal_scorers_dict[top_scorer]
+    print(f"Top Scorer: {top_scorer} ({goals} goals)")
+
+# Get the goal scorers dictionary
+goal_scorers_dict = scorer_analysis(scorers)
+
+# Print the top scorer
+print_top_scorer(goal_scorers_dict)
+
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -195,7 +229,21 @@ Extra Challenge: Add message if they have more than 50% podium finishes,
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+driver_name = 'Carlos Sainz'  
+positions = [2, 1, 4, 3, 5]
 
+def performance_tracker(driver_name =  driver_name, positions = positions):
+    ave_pos = sum(positions) / len(positions)
+    podiums = 0
+    for pos in positions:
+        if pos < 4:
+            podiums += 1
+    podium_percentage = (podiums / len(positions))*100
+    if podium_percentage > 50:
+        print(f"{driver_name} is a consistent podium finisher!")
+    return ave_pos, podiums
+
+performance_tracker()
 linebreak()
 print_border(level,item, "End")
 linebreak()
