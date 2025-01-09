@@ -101,10 +101,10 @@ linebreak()
 print_border(level,item, "End")
 linebreak()
 
-item = "Goal Celebration Validator"
+item = "Name Validator"
 '''
 Concepts: Input Validation, String Methods
-Task: Write a function validate_goal_celebration(player_name) that:
+Task: Write a function validate_name(player_name) that:
 - Takes a player’s name.
 - Validates if it contains only alphabetic characters.
 - Returns the name in title case or prints an error message if invalid.
@@ -113,8 +113,19 @@ Task: Write a function validate_goal_celebration(player_name) that:
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
-player_name = "Lewandowski2"
+def validate_name(name):
+    if name.isalpha():
+        return name.title()  # Use title case
+    else:
+        print("Please input letters only")
+        return None  # Return None for invalid input
 
+while True:
+    name = input("Input your name: ")
+    validated_name = validate_name(name)  # Pass name to the function
+    if validated_name:  # Check if validation was successful
+        print(validated_name)
+        break
 
 linebreak()
 print_border(level,item, "End")
@@ -135,6 +146,22 @@ team2 = "Sevilla"
 goals_team1 = 3
 goals_team2 = 0
 
+def format_match_summary(team1, team2, goals_team1, goals_team2):
+    winner = ""
+    if goals_team1 < goals_team2:
+        winner = team2
+    else:
+        winner = team1
+    message = f"""
+    Match Summary:
+    {team1}: {goals_team1}
+    {team2}: {goals_team2}
+    Result: {winner} wins!
+    """
+    return message
+
+message = format_match_summary(team1, team2, goals_team1, goals_team2)
+print(message)
 
 linebreak()
 print_border(level,item, "End")
@@ -154,6 +181,14 @@ linebreak()
 team_name = "Barça"
 opponents = ["Real Sociedad", "Sevilla", "Las Palmas"]
 
+def generate_fixtures(team_name, opponents):
+    fixtures = f"Upcoming fixtures for {team_name}:"
+    for idx, fixture in enumerate(opponents, start=1):
+        fixtures +=  f"{idx}. {team_name} vs {fixture}\n"
+    
+    return fixtures
+print(generate_fixtures(team_name, opponents))
+
 linebreak()
 print_border(level,item, "End")
 linebreak()
@@ -168,7 +203,11 @@ print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 scores = {"Barça": 3, "Real Madrid": 1, "Atletico Madrid": 0}
-
+def format_scoreboard(scores):
+    for team, score in scores.items():
+        print(f"{team}: {score} points")
+        
+format_scoreboard(scores)
 
 linebreak()
 print_border(level,item, "End")
@@ -187,10 +226,47 @@ Other: "Keep pushing! [Driver Name] finishes [Position] for [Team]."
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
-driver_name = "Carlos Sainz"  
+driver_name = "Carlos Sainz jr"  
 position = 2  
-team = "Ferrari"  
+team = "williams racing"  
 
+def validate_name(name):
+    if all(x.isalpha() or x.isspace() for x in name):
+        name = name
+    else:
+        name = input("Please input valid name using only alphabets or spaces.")
+    return name.title()
+
+def validate_position(position):
+    if type(position) == int:
+        position = position
+    else:
+        position = input("Please input valid position using only integers")
+    return position
+
+def validate_team(team):
+    if all(x.isalpha() or x.isspace() for x in team):
+        team = team
+    else:
+        team = input("Please input valid name using only alphabets or spaces.")
+    return team.title()
+        
+def post_match_interview(name,position,team):
+    validate_name(name)
+    validate_position(position)
+    validate_team(team)
+    
+    if position == 1:
+        return f"Amazing race! {name} wins for {team}!"
+    
+    if 1 < position <= 3:
+        return f"Great effort! {name} finishes on the podium for {team}."
+    else:
+        return f"Keep pushing! {name} finishes {position} for {team}."
+
+outcome = post_match_interview(driver_name, position, team)
+
+print(outcome)
 
 linebreak()
 print_border(level,item, "End")
