@@ -17,7 +17,12 @@ print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 name = "cArLoS sAinZ"
+def format_driver_name(name):
+    name = name.title()
+    return name
 
+name = format_driver_name(name)
+print(name)
 
 linebreak()
 print_border(level,item, "End")
@@ -34,6 +39,12 @@ linebreak()
 #Enter your code below this line
 team_name = "Barça"
 
+def generate_chant(team_name):
+    chant = f"{team_name}, {team_name}, {team_name}!"
+    return chant
+
+chant = generate_chant(team_name)
+print(chant)
 
 linebreak()
 print_border(level,item, "End")
@@ -44,7 +55,6 @@ item = "Match Score Formatter"
 Concepts: String Concatenation
 Task: Write a function format_match_score(team1, team2, score1, score2) that formats a match result into a readable string.
 '''
-
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
@@ -53,6 +63,13 @@ team2 = "Real Madrid"
 score1 = 3
 score2 = 1
 
+def format_match_score(team1,team2,score1,score2):
+    message = f"{team1} {score1} - {score2} {team2}"
+    return message
+
+match_score = format_match_score(team1,team2,score1,score2)
+
+print(match_score)
 
 linebreak()
 print_border(level,item, "End")
@@ -71,6 +88,13 @@ linebreak()
 #Enter your code below this line
 driver_name = "Lewis Hamilton"
 team = "Ferrari"
+
+def introduce_driver(driver_name, team):
+    return f"{driver_name} drives for {team}."
+
+message = introduce_driver(driver_name, team)
+
+print(message)
 
 
 linebreak()
