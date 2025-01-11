@@ -23,6 +23,9 @@ lap_times = [
 ]
 drivers = ["Carlos Sainz", "Charles Leclerc", "Lewis Hamilton"]
 
+for driver in drivers:
+    index =  drivers.index(driver)
+    print(f"{driver}: {lap_times[index]}")
 
 linebreak()
 print_border(level,item, "End")
@@ -43,6 +46,9 @@ team_goals = {
     "Ferran Torres": {"goals": 3, "assists": 4}
 }
 
+for player, stats in team_goals.items():
+    print(f"{player}: {stats['goals']} goals, {stats['assists']} assists")
+
 
 linebreak()
 print_border(level,item, "End")
@@ -51,19 +57,20 @@ linebreak()
 item = "Driver Performance Summary"
 '''
 Concepts: Nested Lists, Loops
-Task: Write a function driver_summary(drivers, lap_times) that takes a list of drivers and their nested lap times and prints a summary for each dr
+Task: Write a function driver_summary(drivers, lap_times) that takes a list of drivers and their nested lap times and prints a summary for each driver
 '''
 
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
-drivers = ["Carlos Sainz", "Charles Leclerc", "Lewis Hamilton"]  
-lap_times = [
-    [78.5, 79.2, 80.3],  
-    [81.1, 80.0, 79.5],  
-    [82.0, 81.2, 80.7]  
-]
+def driver_summary(drivers_list, lap_times_list):
+    for driver in drivers_list:
+        idx =  drivers_list.index(driver)
+        avg_lap = sum(lap_times_list[idx])/len(lap_times_list[idx])
+        fastest_lap = min(lap_times_list[idx])
+        print(f"{driver}: Average Lap Time: {avg_lap:.3f}, Fastest Lap: {fastest_lap}")
 
+driver_summary(drivers, lap_times)
 linebreak()
 print_border(level,item, "End")
 linebreak()
