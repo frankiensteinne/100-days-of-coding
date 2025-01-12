@@ -83,9 +83,7 @@ Concepts: Nested Dictionaries, Loops
 Task: Write a function analyze_fixtures(fixtures) that:
 - Takes a nested dictionary where the key is the match (e.g., "Match 1") and the value is a dictionary containing teams and their scores.
 - Prints the match result for each.
-
 '''
-
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
@@ -94,6 +92,21 @@ fixtures = {
     "Match 2": {"Barça": 2, "Atletico Madrid": 2},
     "Match 3": {"Barça": 0, "Sevilla": 1}
 }
+
+def analyze_fixtures(fixtures):
+    for match, result in fixtures.items():
+        values = list(result.values())
+        keys = list(result.keys())
+        message = match
+        if values[0] >  values[1]:
+            message += f": {keys[0]} wins!"
+        elif values[0] < values[1]:
+            message += f": {keys[1]} wins!"
+        else:
+            message += f": Draw!"
+        print(message)
+    
+analyze_fixtures(fixtures)
 
 
 linebreak()
@@ -104,17 +117,31 @@ item = "Driver Stats Comparison"
 '''
 Concepts: Nested Dictionaries, Loops
 Task: Write a function compare_driver_stats(driver_stats) that:
-- Takes a dictionary where each key is a driver and its value is another dictionary with stats like "team", "points", and "laps".
+- Takes a dictionary where each key is a driver and its value is another dictionary with stats like "team", "points", and "penalties".
 - Compares and prints the driver with the most points.
 '''
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 driver_stats = {
-    "Carlos Sainz": {"team": "Williams", "points": 220, "laps": 30},
-    "Charles Leclerc": {"team": "Ferrari", "points": 240, "laps": 32},
-    "Lewis Hamilton": {"team": "Ferrari", "points": 200, "laps": 28}
+    "Carlos Sainz": {"team": "Williams", "points": 210, "penalties": 0},
+    "Charles Leclerc": {"team": "Ferrari", "points": 240, "penalties": 5},
+    "Lewis Hamilton": {"team": "Ferrari", "points": 210, "penalties": 10}
 }
+def compare_driver_stats(driver_stats):
+    top_driver = ""
+    top_points = 0
+    for driver, info in driver_stats.items():  # Use .items() to get key-value pairs
+        final_points = info["points"] - info["penalties"]
+        if final_points > top_points:
+            top_driver = driver
+            top_points = final_points
+
+    print(f"{top_driver} from {driver_stats[top_driver]['team']} has the most points: {top_points}")
+
+compare_driver_stats(driver_stats)
+        
+        
 
 linebreak()
 print_border(level,item, "End")
