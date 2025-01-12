@@ -16,13 +16,13 @@ Task: Create a nested list of lap times for three drivers. Print the lap times f
 print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
+drivers = ["Carlos Sainz", "Charles Leclerc", "Lewis Hamilton"]
+
 lap_times = [
     [78.5, 79.2, 80.3],  # Carlos Sainz
     [81.1, 80.0, 79.5],  # Charles Leclerc
     [82.0, 81.2, 80.7]   # Lewis Hamilton
 ]
-drivers = ["Carlos Sainz", "Charles Leclerc", "Lewis Hamilton"]
-
 for driver in drivers:
     index =  drivers.index(driver)
     print(f"{driver}: {lap_times[index]}")
@@ -162,6 +162,17 @@ team_goals = {
     "Ferran Torres": {"goals": 3, "assists": 4}
 }
 
+def find_top_scorer(team_goals):
+    top_scorer = ""
+    top_goals = 0
+    for player, stats in team_goals.items():
+        if stats["goals"] > top_goals:
+            top_scorer = player
+            top_goals = stats["goals"]
+    print(f"Top Scorer: {top_scorer} with {top_goals} goals.")
+    
+find_top_scorer(team_goals)
+
 
 linebreak()
 print_border(level,item, "End")
@@ -179,8 +190,23 @@ print_border(level,item, "Start")
 linebreak()
 #Enter your code below this line
 teams = ["Barça", "Real Madrid", "Atletico Madrid", "Sevilla"]  
-points = [12, 15, 9, 10]  
+points = [15, 13, 9, 10]
+def rank_teams(teams, points):
+    # 1. Combine and sort
+    team_points = list(zip(teams, points))  # Combine teams and points
+    team_points.sort(key=lambda item: item[1], reverse=True)  # Sort by points
 
+    # 2. Assign ranks
+    ranks = {}
+    rank = 1
+    for team, _ in team_points:
+        ranks[team] = {'points': points[teams.index(team)], 'rank': rank}  # Include original points
+        rank += 1
+
+    return ranks
+
+ranked_teams = rank_teams(teams, points)
+print(ranked_teams)
 
 linebreak()
 print_border(level,item, "End")
@@ -200,6 +226,26 @@ fixtures = {
     "Match 2": {"Barça": 2, "Atletico Madrid": 2},
     "Match 3": {"Barça": 0, "Sevilla": 1}
 }
+
+def analyze_fixtures(fixtures):
+    for match, result in fixtures.items():
+        team1, team2 = list(result.keys())  # Get team names
+        score1, score2 = list(result.values())  # Get scores
+
+        if score1 > score2:
+            winner = team1
+            points_earned = 3
+        elif score1 < score2:
+            winner = team2
+            points_earned = 0  # 0 points for a loss
+        else:
+            winner = "Draw"
+            points_earned = 1  # 1 point for a draw
+
+        print(f"{match}: {winner} wins! (Points Earned: {points_earned})")
+
+analyze_fixtures(fixtures)
+    
 
 
 linebreak()
@@ -222,6 +268,27 @@ team_goals = {
     "Pedri": {"goals": 5, "assists": 8},
     "Ferran Torres": {"goals": 3, "assists": 4}
 }
+
+def find_top_scorer(team_goals):
+    top_scorer = ""
+    top_goals = 0
+    top_assister =""
+    top_assists = 0
+    for player, stats in team_goals.items():
+        if stats["goals"] > top_goals:
+            top_scorer = player
+            top_goals = stats["goals"]
+        
+        if stats["assists"] > top_assists:
+            top_assister = player
+            top_assists = stats["assists"]
+
+    print(f"Top Scorer: {top_scorer} with {top_goals} goals.")
+    print(f"Top Playmaker: {top_assister} with {top_assists} assists.")
+        
+    
+find_top_scorer(team_goals)
+
 
 linebreak()
 print_border(level,item, "End")
